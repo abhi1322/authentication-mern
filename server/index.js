@@ -3,9 +3,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 const connectDB = require("./db/dbConnection.js");
 const User = require("./models/user.js");
+const cors = require("cors");
 
 // middleware for parsing
 app.use(express.json());
+app.use(cors());
 
 connectDB(); // connect to database
 
